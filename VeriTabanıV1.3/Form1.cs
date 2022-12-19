@@ -122,8 +122,10 @@ namespace VeriTabanıV1._3
                        {
                         this.Hide();
                         Form2akademi formakademi = new Form2akademi();
-                           formakademi.ShowDialog();
+                        formakademi.Text = idtemp.Text;
+                        formakademi.ShowDialog();
                            this.Close();
+                      
                        }
                       // MessageBox.Show("Giriş doğru");
                    }

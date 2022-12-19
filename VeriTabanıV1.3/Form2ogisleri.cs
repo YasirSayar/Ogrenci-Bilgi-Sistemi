@@ -32,9 +32,14 @@ namespace VeriTabanıV1._3
             DataTable tablo = new DataTable();//tablo oluşturma
             da.Fill(tablo);//da nesnesini tablo ile doldurma
             dataGridView1.DataSource = tablo;
-            
-
+            BindingSource bindingSource1 = new BindingSource();
+            bindingSource1.DataSource = tablo;
+            dataGridView1.DataSource = bindingSource1;
+            BindingNavigator bindingNavigator1 = new BindingNavigator();
+            bindingSource1.EndEdit();
+            da.Update(tablo);
         }
+        
         public Form2ogisleri()
         {
             InitializeComponent();
@@ -55,12 +60,20 @@ namespace VeriTabanıV1._3
         private void buttonKayıt_Click(object sender, EventArgs e)
         {
             baglanti.Open();
-            OleDbCommand komut = new OleDbCommand("INSERT INTO [Ogrenciler$] (ID,İsim,Soyisim,Sınıf) values (@p1,@p2,@p3,@p4)", baglanti);
-            komut.Parameters.AddWithValue("@p1",txt_id.Text);
-            komut.Parameters.AddWithValue("@p2", txt_isim.Text);
-            komut.Parameters.AddWithValue("@p3", txt_soyisim.Text);
-            komut.Parameters.AddWithValue("@p4",txt_sinif.Text);
-            komut.ExecuteNonQuery();//Bu metod geriye int olarak update, insert, delete olaylarından etkilenen satır sayısı döndürüyor. // işlemleri gerçekleştir demek gibi 
+              OleDbCommand komut = new OleDbCommand("INSERT INTO [Ogrenciler$] (ID,İsim,Soyisim,Sınıf) values (@p1,@p2,@p3,@p4)", baglanti);
+              komut.Parameters.AddWithValue("@p1",txt_id.Text);
+              komut.Parameters.AddWithValue("@p2", txt_isim.Text);
+              komut.Parameters.AddWithValue("@p3", txt_soyisim.Text);
+              komut.Parameters.AddWithValue("@p4",txt_sinif.Text);
+              komut.ExecuteNonQuery();                //Bu metod geriye int olarak update, insert, delete olaylarından etkilenen satır sayısı döndürüyor. // işlemleri gerçekleştir demek gibi 
+            /* Excel.Application uyg = new Excel.Application();
+            var kitap= uyg.Workbooks.Open(adresFonksiyon("Yeni Microsoft Excel Çalışma Sayfası"), 0, false);
+             var sayfa = kitap.Worksheets["Ogrenciler"];
+             //   Excel.Range all = uyg.get_Range("A1:H10", Type.Missing);
+             Excel.Range last = sayfa.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell,Type.Missing);
+               Excel.Range alan = sayfa.get_Range("A1", last);
+               var şifre = (string)(sayfa.Cells[last, 2] as Excel.Range).Value;*/
+            tablo_olustur();
             baglanti.Close();
             MessageBox.Show("Ogrenci Bilgisi sisteme kaydedildi");
             tablo_olustur();

@@ -35,6 +35,7 @@
             this.txt_isim = new System.Windows.Forms.TextBox();
             this.txt_soyisim = new System.Windows.Forms.TextBox();
             this.txt_sinif = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,37 +71,47 @@
             // 
             // txt_id
             // 
-            this.txt_id.Location = new System.Drawing.Point(780, 281);
+            this.txt_id.Location = new System.Drawing.Point(779, 293);
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(100, 22);
             this.txt_id.TabIndex = 3;
             // 
             // txt_isim
             // 
-            this.txt_isim.Location = new System.Drawing.Point(780, 309);
+            this.txt_isim.Location = new System.Drawing.Point(779, 321);
             this.txt_isim.Name = "txt_isim";
             this.txt_isim.Size = new System.Drawing.Size(100, 22);
             this.txt_isim.TabIndex = 4;
             // 
             // txt_soyisim
             // 
-            this.txt_soyisim.Location = new System.Drawing.Point(780, 337);
+            this.txt_soyisim.Location = new System.Drawing.Point(779, 349);
             this.txt_soyisim.Name = "txt_soyisim";
             this.txt_soyisim.Size = new System.Drawing.Size(100, 22);
             this.txt_soyisim.TabIndex = 5;
             // 
             // txt_sinif
             // 
-            this.txt_sinif.Location = new System.Drawing.Point(780, 365);
+            this.txt_sinif.Location = new System.Drawing.Point(779, 377);
             this.txt_sinif.Name = "txt_sinif";
             this.txt_sinif.Size = new System.Drawing.Size(100, 22);
             this.txt_sinif.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(696, 101);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "label1";
             // 
             // Form2ogisleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 549);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_sinif);
             this.Controls.Add(this.txt_soyisim);
             this.Controls.Add(this.txt_isim);
@@ -126,5 +137,6 @@
         private System.Windows.Forms.TextBox txt_isim;
         private System.Windows.Forms.TextBox txt_soyisim;
         private System.Windows.Forms.TextBox txt_sinif;
+        private System.Windows.Forms.Label label1;
     }
 }

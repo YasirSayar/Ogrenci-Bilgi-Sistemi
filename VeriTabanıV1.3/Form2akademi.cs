@@ -21,6 +21,9 @@ namespace VeriTabanıV1._3
         {
             Form1 f1 = new Form1();
             f1.Close();
+            button1.Text = this.Text;
+            this.Text = "FORMMM";
+            
         }
     }
 }
